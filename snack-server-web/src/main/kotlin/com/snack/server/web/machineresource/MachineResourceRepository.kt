@@ -1,4 +1,4 @@
-package com.snack.snackserver.machineresource
+package com.snack.server.web.machineresource
 
 import org.springframework.data.repository.CrudRepository
 import java.util.*

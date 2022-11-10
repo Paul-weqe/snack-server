@@ -1,6 +1,6 @@
-package com.snack.snackserver.network
+package com.snack.server.web.network
 
-import com.snack.snackserver.machineresource.IMachineService
+import com.snack.server.web.machineresource.IMachineService
 import org.springframework.stereotype.Service
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -13,7 +13,7 @@ import java.util.stream.Collectors
 @Service
 class SnackSocketService(
     val machineResourceService: IMachineService
-): ISnackSocketService{
+): ISnackSocketService {
 
     override fun createSocket(port: Int){
 

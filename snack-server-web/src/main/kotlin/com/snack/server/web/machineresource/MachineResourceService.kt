@@ -1,4 +1,4 @@
-package com.snack.snackserver.machineresource
+package com.snack.server.web.machineresource
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.stereotype.Service

@@ -1,6 +1,6 @@
-package com.snack.snackserver
+package com.snack.server.web
 
-import com.snack.snackserver.network.ISnackSocketService
+import com.snack.server.web.network.ISnackSocketService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner

@@ -1,8 +1,8 @@
-package com.snack.snackserver.controller
+package com.snack.server.web.controller
 
-import com.snack.snackserver.machineresource.IMachineService
-import com.snack.snackserver.machineresource.MachineResource
-import com.snack.snackserver.machineresource.MachineResourceService
+import com.snack.server.web.machineresource.IMachineService
+import com.snack.server.web.machineresource.MachineResource
+import com.snack.server.web.machineresource.MachineResourceService
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set

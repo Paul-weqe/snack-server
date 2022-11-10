@@ -1,9 +1,6 @@
 package com.snack.snackserver.network
 
 import com.snack.snackserver.machineresource.IMachineService
-import com.snack.snackserver.machineresource.MachineResourceService
-import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.stereotype.Component
 import org.springframework.stereotype.Service
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -12,8 +9,8 @@ import java.net.Socket
 import java.nio.charset.StandardCharsets
 import java.util.stream.Collectors
 
+//@Service
 @Service
-@Component
 class SnackSocketService(
     val machineResourceService: IMachineService
 ): ISnackSocketService{

@@ -31,9 +31,9 @@ class MachineResourceService(
 
 }
 
-data class MachineResourceMapper(
-    val ip_address: String,
-    val ram: Float,
-    val storage: Float,
-    val cpu: Float
-)
+class MachineResourceMapper{
+    var ip_address: String = ""
+    var ram: Float = Float.MIN_VALUE
+    var storage: Float = Float.MIN_VALUE
+    var cpu: Float = Float.MIN_VALUE
+}

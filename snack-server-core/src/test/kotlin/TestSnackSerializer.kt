@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.core.JsonParseException
 import com.snack.server.core.SnackSerializer
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -15,27 +16,45 @@ class TestSnackSerializer {
 
     val validJsonString = "{" +
             "\"ip_address\": \"10.10.10.10\"," +
-            "\"ram\": 10.10," +
+            "\"ram\": 10.0," +
             "\"storage\": 20.0," +
             "\"cpu\": 30.0" +
             "}"
 
-    fun Double.roundTo(n: Int): Double{
-        return "%.${n}f".format(this).toDouble()
+    val invalidJson = "thisismine"
+
+    fun Float.roundTo(n: Int): Float{
+        return "%.${n}f".format(this).toFloat()
     }
 
     @Test
     fun testXmlSerialization(){
         val serializedResourceData = SnackSerializer.serializeXml(validXmlString)
-        println(serializedResourceData)
-//        assertEquals(serializedResourceData?.cpu?.roundTo(5) , 30.0F.roundTo(5))
-//        assertEquals(serializedResourceData?.ram?.roundTo(5) , 10.0F.roundTo(5))
-//        assertEquals(serializedResourceData?.storage?.roundTo(5) , 20.0F.roundTo(5))
-//        assertEquals(serializedResourceData?.ip_address , "10.10.10.10")
+        assertEquals(serializedResourceData?.cpu?.roundTo(5) , 30.0F.roundTo(5))
+        assertEquals(serializedResourceData?.ram?.roundTo(5) , 10.0F.roundTo(5))
+        assertEquals(serializedResourceData?.storage?.roundTo(5) , 20.0F.roundTo(5))
+        assertEquals(serializedResourceData?.ip_address , "10.10.10.10")
     }
 
-//    @Test
-//    fun testJsonSerialization(){
-//        println(SnackSerializer.serializeJson(validJsonString))
-//    }
+    @Test
+    fun testJsonSerialization(){
+        val serializedResourceData = SnackSerializer.serializeJson(validJsonString);
+        assertEquals(serializedResourceData?.cpu?.roundTo(5) , 30.0F.roundTo(5))
+        assertEquals(serializedResourceData?.ram?.roundTo(5) , 10.0F.roundTo(5))
+        assertEquals(serializedResourceData?.storage?.roundTo(5) , 20.0F.roundTo(5))
+        assertEquals(serializedResourceData?.ip_address , "10.10.10.10")
+    }
+
+    @Test
+    fun testInvalidJson(){
+        val serializedXml = SnackSerializer.serialize(validXmlString)
+        val serializedJson = SnackSerializer.serialize(validJsonString)
+        val serializedInvalid = SnackSerializer.serialize(invalidJson)
+
+        assertEquals(serializedXml?.cpu, serializedJson?.cpu)
+        assertEquals(serializedXml?.ram, serializedJson?.ram)
+        assertEquals(serializedXml?.storage, serializedJson?.storage)
+        assertEquals(serializedXml?.ip_address, serializedJson?.ip_address)
+        assertEquals(serializedInvalid, null)
+    }
 }

@@ -1,9 +1,6 @@
-import com.fasterxml.jackson.core.JsonParseException
 import com.snack.server.core.SnackSerializer
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
-import java.lang.invoke.SerializedLambda
-import kotlin.math.roundToInt
 
 class TestSnackSerializer {
     val validXmlString = "<SnackResourceData>" +

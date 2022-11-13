@@ -19,7 +19,7 @@
 
 	<groupId>com.snack</groupId>
 	<artifactId>snackserver</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Snack Server</name>
 	<description>Server for Snack </description>
 

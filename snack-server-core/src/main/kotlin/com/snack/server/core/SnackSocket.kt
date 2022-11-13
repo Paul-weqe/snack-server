@@ -9,13 +9,6 @@ import java.util.logging.Logger
 import java.util.stream.Collectors
 import kotlin.concurrent.thread
 
-fun main(){
-    thread(name = "snack-socket-server"){
-        val snackSocket = SnackSocketServer()
-        snackSocket.createSocket()
-    }
-}
-
 class SnackSocketServer {
     var LOG = Logger.getLogger(this.javaClass::class.java.name)
 

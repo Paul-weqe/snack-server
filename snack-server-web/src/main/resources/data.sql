@@ -5,3 +5,5 @@ CREATE TABLE IF NOT EXISTS machine_resources(
     storage FLOAT,
     cpu FLOAT
 );
+
+ALTER TABLE IF EXISTS machine_resources ADD COLUMN time_s TIMESTAMP NULL;

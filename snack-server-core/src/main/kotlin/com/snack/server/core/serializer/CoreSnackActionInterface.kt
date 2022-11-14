@@ -1,5 +1,5 @@
 package com.snack.server.core.serializer
 
-interface CoreSnackSerializerActionInterface {
+interface CoreSnackActionInterface {
     fun runAction(resourceData: SnackResourceData): Int?
 }

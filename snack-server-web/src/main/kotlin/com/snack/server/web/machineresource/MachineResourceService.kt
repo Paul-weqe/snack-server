@@ -8,17 +8,17 @@ class MachineResourceService(
     val machineResourceRepository: MachineResourceRepository
 ): IMachineService {
 
-    override fun createMachineResource(ip_address: String, ram: Float, storage: Float, cpu: Float): MachineResource {
-        val machineResource = MachineResource(
+    override fun createMachineResource(ip_address: String, ram: Float, storage: Float, cpu: Float): MachineResourceEntity {
+        val machineResourceEntity = MachineResourceEntity(
             ip_address = ip_address, ram = ram, storage = storage, cpu = cpu
         )
-        machineResourceRepository.save(machineResource)
-        return machineResource
+        machineResourceRepository.save(machineResourceEntity)
+        return machineResourceEntity
     }
 
-    override fun findMachinesResources(): List<MachineResource> {
+    override fun findMachinesResources(): List<MachineResourceEntity> {
         val machines_resources = machineResourceRepository.findAll()
-        val response: MutableList<MachineResource> = ArrayList()
+        val response: MutableList<MachineResourceEntity> = ArrayList()
         for (x in machines_resources){
             response.add(x)
         }

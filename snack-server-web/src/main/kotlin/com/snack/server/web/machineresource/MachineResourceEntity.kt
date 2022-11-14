@@ -1,10 +1,13 @@
 package com.snack.server.web.machineresource
 
+import org.hibernate.annotations.CreationTimestamp
+import java.sql.Date
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity
 @Table(name = "machine_resources")
-class MachineResource {
+class MachineResourceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +25,10 @@ class MachineResource {
 
     @Column(name = "cpu")
     var cpu: Float = Float.MIN_VALUE
+
+    @Column(name = "time_s")
+    @CreationTimestamp
+    lateinit var timeS: LocalDateTime
 
     constructor(ip_address: String, ram: Float, storage: Float, cpu: Float){
         this.ip_address = ip_address

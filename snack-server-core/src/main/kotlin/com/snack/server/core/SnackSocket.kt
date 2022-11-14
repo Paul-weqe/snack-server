@@ -1,6 +1,6 @@
 package com.snack.server.core
 
-import com.snack.server.core.serializer.CoreSnackSerializerActionInterface
+import com.snack.server.core.serializer.CoreSnackActionInterface
 import com.snack.server.core.serializer.SnackSerializer
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -11,7 +11,7 @@ import java.util.logging.Logger
 import java.util.stream.Collectors
 
 class SnackSocketServer(
-    private val snackAction: CoreSnackSerializerActionInterface
+    private val snackAction: CoreSnackActionInterface
 ) {
     private var LOG = Logger.getLogger(this.javaClass::class.java.name)
      fun createSocket(port: Int = 9099){

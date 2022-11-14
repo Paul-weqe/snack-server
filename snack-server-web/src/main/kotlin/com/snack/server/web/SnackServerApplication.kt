@@ -7,7 +7,6 @@ import org.springframework.boot.runApplication
 @SpringBootApplication
 class SnackServerApplication
 
-
 @Autowired
 fun main(args: Array<String>) {
 	runApplication<SnackServerApplication>(*args)

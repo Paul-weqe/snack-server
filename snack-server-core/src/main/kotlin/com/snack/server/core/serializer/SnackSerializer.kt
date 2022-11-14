@@ -1,4 +1,4 @@
-package com.snack.server.core
+package com.snack.server.core.serializer
 
 import com.fasterxml.jackson.core.JsonParseException
 import com.fasterxml.jackson.databind.ObjectMapper

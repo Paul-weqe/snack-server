@@ -1,4 +1,4 @@
-import com.snack.server.core.SnackSerializer
+import com.snack.server.core.serializer.SnackSerializer
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 

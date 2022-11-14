@@ -1,6 +1,5 @@
 package com.snack.server.web.machineresource
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.stereotype.Service
 
 
@@ -17,23 +16,4 @@ class MachineResourceService(
         return machineResource
     }
 
-    override fun interprateMachineNetworkData(networkData: String) {
-        val mapper = ObjectMapper()
-
-        val data = mapper.readValue(networkData, MachineResourceMapper::class.java)
-        createMachineResource(
-            ip_address = data.ip_address,
-            ram = data.ram,
-            storage = data.storage,
-            cpu = data.cpu
-        )
-    }
-
-}
-
-class MachineResourceMapper{
-    var ip_address: String = ""
-    var ram: Float = Float.MIN_VALUE
-    var storage: Float = Float.MIN_VALUE
-    var cpu: Float = Float.MIN_VALUE
 }

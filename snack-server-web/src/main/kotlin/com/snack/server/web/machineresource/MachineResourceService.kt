@@ -16,4 +16,13 @@ class MachineResourceService(
         return machineResource
     }
 
+    override fun findMachinesResources(): List<MachineResource> {
+        val machines_resources = machineResourceRepository.findAll()
+        val response: MutableList<MachineResource> = ArrayList()
+        for (x in machines_resources){
+            response.add(x)
+        }
+        return response
+    }
+
 }

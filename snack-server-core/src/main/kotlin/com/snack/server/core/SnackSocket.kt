@@ -1,7 +1,7 @@
 package com.snack.server.core
 
-import com.snack.server.core.serializer.CoreSnackActionInterface
-import com.snack.server.core.serializer.SnackSerializer
+import com.snack.server.core.serializer.InputSerializer
+import com.snack.server.core.serializer.SnackResourceSerializer
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.ServerSocket
@@ -26,7 +26,7 @@ class SnackSocketServer(
                      val incomingClientData = BufferedReader(InputStreamReader(inputStream, StandardCharsets.UTF_8))
                          .lines()
                          .collect(Collectors.joining("\n\n"))
-                     val clientData = SnackSerializer.serialize(incomingClientData)
+                     val clientData = InputSerializer.serialize(incomingClientData)
                      clientData?.let{ snackAction.runAction(it) }
                  }
              } finally {

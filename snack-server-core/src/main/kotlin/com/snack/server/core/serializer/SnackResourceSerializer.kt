@@ -4,11 +4,11 @@ import com.fasterxml.jackson.core.JsonParseException
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
 
-class SnackSerializer {
+class SnackResourceSerializer {
     companion object{
 
-        fun serialize(unserializedInputData: String): SnackResourceData? {
-            var result: SnackResourceData?
+        fun serialize(unserializedInputData: String): Device? {
+            var result: Device?
             try {
                 result = serializeXml(unserializedInputData)
             }
@@ -36,9 +36,9 @@ class SnackSerializer {
         *   <cpu>30.0</cpu>
         * </SnackResourceData>
          */
-        fun serializeXml(unserializedInputData: String): SnackResourceData? {
+        fun serializeXml(unserializedInputData: String): Device? {
             val mapper = XmlMapper()
-            val snackResource = mapper.readValue(unserializedInputData, SnackResourceData::class.java)
+            val snackResource = mapper.readValue(unserializedInputData, Device::class.java)
             return snackResource
         }
 
@@ -48,14 +48,14 @@ class SnackSerializer {
          *  ""
          * }
          */
-        fun serializeJson(unserializedInputData: String): SnackResourceData? {
-            val snackResource = ObjectMapper().readValue(unserializedInputData, SnackResourceData::class.java)
+        fun serializeJson(unserializedInputData: String): Device? {
+            val snackResource = ObjectMapper().readValue(unserializedInputData, Device::class.java)
             return snackResource
         }
     }
 }
 
-class SnackResourceData{
+class Device{
     var ip_address: String = ""
     var ram: Float = Float.MIN_VALUE
     var storage: Float = Float.MIN_VALUE

@@ -1,4 +1,4 @@
-package com.snack.server.web.machineresource
+package com.snack.server.web.deviceresource
 
 interface IMachineService {
     fun createMachineResource(ip_address: String, ram: Float, storage: Float, cpu: Float): MachineResourceEntity

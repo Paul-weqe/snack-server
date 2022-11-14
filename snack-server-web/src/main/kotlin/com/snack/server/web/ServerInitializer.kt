@@ -1,7 +1,7 @@
 package com.snack.server.web
 
 import com.snack.server.core.SnackSocketServer
-import com.snack.server.core.serializer.CoreSnackActionInterface
+import com.snack.server.core.CoreSnackActionInterface
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.stereotype.Component

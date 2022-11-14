@@ -3,7 +3,6 @@ CREATE TABLE IF NOT EXISTS machine_resources(
     ip_address VARCHAR(255),
     ram FLOAT,
     storage FLOAT,
-    cpu FLOAT
+    cpu FLOAT,
+    time_s TIMESTAMP
 );
-
-ALTER TABLE IF EXISTS machine_resources ADD COLUMN time_s TIMESTAMP NULL;

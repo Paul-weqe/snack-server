@@ -1,7 +1,7 @@
-package com.snack.server.web.machineresource.controller
+package com.snack.server.web.deviceresource.controller
 
-import com.snack.server.web.machineresource.IMachineService
-import com.snack.server.web.machineresource.MachineResourceEntity
+import com.snack.server.web.deviceresource.IMachineService
+import com.snack.server.web.deviceresource.MachineResourceEntity
 import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -13,6 +13,4 @@ class ApiMachineResourceController(
 ) {
     @GetMapping("/api/all-machine-resources", produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getAllMachines(): List<MachineResourceEntity> = machineResourceService.findMachinesResources()
-
-
 }

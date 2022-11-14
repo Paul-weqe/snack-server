@@ -1,15 +1,15 @@
-package com.snack.server.web.machineresource
+package com.snack.server.web.deviceresource
 
-import com.snack.server.core.serializer.CoreSnackActionInterface
-import com.snack.server.core.serializer.SnackResourceData
+import com.snack.server.core.CoreSnackActionInterface
+import com.snack.server.core.serializer.Device
 import org.springframework.stereotype.Service
 
 @Service
 class SnackServerAction(
     val machineService: IMachineService
-): CoreSnackActionInterface{
+): CoreSnackActionInterface {
 
-    override fun runAction(resourceData: SnackResourceData): Int {
+    override fun runAction(resourceData: Device): Int {
         val machineResource = machineService.createMachineResource(
             resourceData.ip_address,
             resourceData.ram,

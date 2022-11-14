@@ -1,21 +1,21 @@
-package com.snack.server.web.machineresource
+package com.snack.server.web.deviceresource
 
 import org.hibernate.annotations.CreationTimestamp
-import java.sql.Date
 import java.time.LocalDateTime
 import javax.persistence.*
 
+
 @Entity
-@Table(name = "machine_resources")
-class MachineResourceEntity {
+@Table(name = "device_resources")
+class DeviceResource {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     val id: Int = Int.MIN_VALUE
 
-    @Column(name = "ip_address")
-    var ip_address: String = ""
+    @Column(name = "device_id")
+    var deviceId: Int = Int.MIN_VALUE
 
     @Column(name = "ram")
     var ram: Float = Float.MIN_VALUE
@@ -30,12 +30,12 @@ class MachineResourceEntity {
     @CreationTimestamp
     lateinit var timeS: LocalDateTime
 
-    constructor(ip_address: String, ram: Float, storage: Float, cpu: Float){
-        this.ip_address = ip_address
+    constructor(deviceId: Int, ram: Float, storage: Float, cpu: Float){
+        this.deviceId = deviceId
         this.ram = ram
         this.storage = storage
         this.cpu = cpu
     }
 
-    constructor(){}
+    constructor()
 }

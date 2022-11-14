@@ -1,8 +1,7 @@
-package com.snack.server.web.services
+package com.snack.server.web.machineresource
 
 import com.snack.server.core.serializer.CoreSnackSerializerActionInterface
 import com.snack.server.core.serializer.SnackResourceData
-import com.snack.server.web.machineresource.IMachineService
 import org.springframework.stereotype.Service
 
 @Service

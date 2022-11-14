@@ -1,6 +1,6 @@
 package com.snack.server.core.dataclasses
 
-class DeviceResource {
+class DeviceResourceDataclass {
     var ram: Float = Float.MIN_VALUE
     var storage: Float = Float.MIN_VALUE
     var cpu: Float = Float.MIN_VALUE

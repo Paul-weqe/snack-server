@@ -1,4 +1,4 @@
-import com.snack.server.core.dataclasses.Device
+import com.snack.server.core.dataclasses.DeviceDataclass
 import com.snack.server.core.serializer.InputSerializer
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -42,7 +42,7 @@ class TestSerializer {
         runSerializerAssertions(serializedData)
     }
 
-    private fun runSerializerAssertions(serializedData: Device?){
+    private fun runSerializerAssertions(serializedData: DeviceDataclass?){
         assertEquals(serializedData?.hostname, "waswa")
         assertEquals(serializedData?.operatingSystem, "linux")
         assertEquals(serializedData?.machineId, "machineId")

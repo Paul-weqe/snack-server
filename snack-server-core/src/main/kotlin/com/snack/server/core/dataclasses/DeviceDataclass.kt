@@ -1,10 +1,10 @@
 package com.snack.server.core.dataclasses
 
-class Device {
+class DeviceDataclass {
     var machineId: String = ""
     var operatingSystem: String = ""
     var hostname: String = ""
-    var resources: DeviceResource = DeviceResource()
+    var resources: DeviceResourceDataclass = DeviceResourceDataclass()
 
     override fun toString(): String {
         return "<machine-id: $machineId, " +

@@ -1,7 +1,7 @@
 package com.snack.server.core
 
-import com.snack.server.core.dataclasses.Device
+import com.snack.server.core.dataclasses.DeviceDataclass
 
 interface CoreSnackActionInterface {
-    fun runAction(resourceData: Device): Int?
+    fun runAction(resourceData: DeviceDataclass): Int?
 }

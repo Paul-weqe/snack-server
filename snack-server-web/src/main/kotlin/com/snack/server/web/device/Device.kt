@@ -15,7 +15,7 @@ class Device {
     @Column(name = "id")
     val id: Int = Int.MIN_VALUE
 
-    @Column(name = "machine_id")
+    @Column(name = "machine_id", unique = true)
     var machineId: String = ""
 
     @Column(name = "operating_system")
@@ -30,8 +30,6 @@ class Device {
         this.hostname = hostname
     }
 
-    constructor(){
-
-    }
+    constructor()
 
 }

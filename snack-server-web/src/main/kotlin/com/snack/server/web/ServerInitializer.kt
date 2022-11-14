@@ -17,6 +17,6 @@ class ServerInitializer(
             val sn = SnackSocketServer(snackServerAction)
             sn.createSocket()
         }
-
     }
+
 }

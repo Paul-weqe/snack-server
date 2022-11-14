@@ -3,13 +3,13 @@ package com.snack.server.core.serializer
 import com.fasterxml.jackson.core.JsonParseException
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
-import com.snack.server.core.dataclasses.Device
+import com.snack.server.core.dataclasses.DeviceDataclass
 
 class InputSerializer {
     companion object {
 
-        fun serialize(unserializedInputData: String): Device? {
-            var result: Device?
+        fun serialize(unserializedInputData: String): DeviceDataclass? {
+            var result: DeviceDataclass?
             try{
                 result = serializeXml(unserializedInputData)
             } catch(execption: JsonParseException){
@@ -38,9 +38,9 @@ class InputSerializer {
          *     </resources>
          * </Device>
          */
-        fun serializeXml(unserializedInputData: String): Device? {
+        fun serializeXml(unserializedInputData: String): DeviceDataclass? {
             val mapper = XmlMapper()
-            return mapper.readValue(unserializedInputData, Device::class.java)
+            return mapper.readValue(unserializedInputData, DeviceDataclass::class.java)
         }
 
         /**
@@ -55,9 +55,9 @@ class InputSerializer {
          *   }
          * }
          */
-        fun serializeJson(unserializedInputData: String): Device? {
+        fun serializeJson(unserializedInputData: String): DeviceDataclass? {
             val mapper = ObjectMapper()
-            return mapper.readValue(unserializedInputData, Device::class.java)
+            return mapper.readValue(unserializedInputData, DeviceDataclass::class.java)
         }
 
 

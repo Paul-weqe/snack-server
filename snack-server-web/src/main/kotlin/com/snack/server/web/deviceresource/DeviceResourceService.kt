@@ -13,16 +13,15 @@ class DeviceResourceService(
 
     override fun addResource(deviceData: DeviceDataclass): DeviceResource? {
         val device = deviceService.getDeviceUsingMachineId(deviceData.machineId)
-        // check if device exists then add resource details.
-        val deviceResource = device?.let {
-            DeviceResource(
-                deviceId = it.id,
-                ram = deviceData.resources.ram,
-                storage = deviceData.resources.storage,
-                cpu = deviceData.resources.cpu
-            )
-        }
-        return deviceResource
+
+        // check if device exists first
+        val deviceResource = DeviceResource(
+            deviceId = device!!.id,
+            ram = deviceData.resources.ram,
+            storage = deviceData.resources.storage,
+            cpu = deviceData.resources.cpu
+        )
+        return deviceResourceRepository.save(deviceResource)
     }
 
 }

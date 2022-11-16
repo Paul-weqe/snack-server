@@ -6,7 +6,7 @@ import javax.persistence.*
 
 
 @Entity
-@Table(name = "device_resources")
+@Table(name = "devices_resources")
 class DeviceResource {
 
     @Id

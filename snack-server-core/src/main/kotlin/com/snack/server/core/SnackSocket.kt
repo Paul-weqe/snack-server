@@ -1,7 +1,6 @@
 package com.snack.server.core
 
 import com.snack.server.core.serializer.InputSerializer
-import com.snack.server.core.serializer.SnackResourceSerializer
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.net.ServerSocket
@@ -27,7 +26,7 @@ class SnackSocketServer(
                          .lines()
                          .collect(Collectors.joining("\n\n"))
                      val clientData = InputSerializer.serialize(incomingClientData)
-                     clientData?.let{ snackAction.runAction(it) }
+                     clientData?.let{ snackAction.openSnackListenerPort(it) }
                  }
              } finally {
                  LOG.warning("closing snack server socket on port ${port}")

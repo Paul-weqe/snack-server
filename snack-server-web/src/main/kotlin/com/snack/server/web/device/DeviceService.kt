@@ -16,9 +16,7 @@ class DeviceService(
         return deviceRepository.save(d)
     }
 
-    override fun getDeviceUsingMachineId(machineId: String): Device? {
-        return deviceRepository.findByMachineId(machineId)
-    }
-
+    override fun getDeviceUsingMachineId(machineId: String): Device? = deviceRepository.findByMachineId(machineId)
+    override fun getAllDevices(): List<Device> = deviceRepository.findAll() as List<Device>
 
 }

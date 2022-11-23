@@ -11,7 +11,7 @@ class SnackServerAction(
     val deviceResourceService: IDeviceResourceService
 ): CoreSnackActionInterface {
 
-    override fun runAction(resourceData: DeviceDataclass): Int? {
+    override fun openSnackListenerPort(resourceData: DeviceDataclass): Int? {
         val device = deviceService.getDeviceUsingMachineId(resourceData.machineId)
         if (device == null)
             deviceService.createDevice(resourceData)
